@@ -10,7 +10,9 @@ public class EscogerTurno extends javax.swing.JDialog {
     public EscogerTurno(java.awt.Frame parent, boolean modal, String usuario1, String usuario2) {
         super(parent, modal);
         this.usuario1 = usuario1;
-        this.usuario2 = usuario2;       
+        this.usuario2 = usuario2;
+        //Por defecto sino elige el turno, Jugará el usuario 1 primero. 
+        turno = "usuario1";
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -20,10 +22,6 @@ public class EscogerTurno extends javax.swing.JDialog {
     }
 
     
-    /*
-    private String getTurno(){
-        return turno; 
-    }*/
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -72,7 +70,7 @@ public class EscogerTurno extends javax.swing.JDialog {
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
                 .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnUsuario1)
                     .addComponent(btnUsuario2))
                 .addContainerGap(48, Short.MAX_VALUE))
@@ -91,34 +89,9 @@ public class EscogerTurno extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_btnUsuario2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EscogerTurno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EscogerTurno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EscogerTurno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EscogerTurno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the dialog */
+    public static void main(String args[]) {
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 EscogerTurno dialog = new EscogerTurno(new javax.swing.JFrame(), true, null, null);
